@@ -3,23 +3,10 @@ import { DatePickerWithRange } from '../../@/components/ui/DateRange';
 import { Button } from '../../@/components/ui/button';
 import Title from '../../components/Title';
 import { ChevronRight } from 'lucide-react';
-import About1 from '../../assets/images/about1.jpg'
-import About2 from '../../assets/images/about2.jpg'
+import About1 from '../../assets/images/about1.jpg';
+import About2 from '../../assets/images/about2.jpg';
 
-import { Tilt } from 'react-tilt';
-
-
-const defaultOptions = {
-	reverse: true,
-	max: 10,
-	perspective: 2000, 
-	speed: 100, 
-	transition: true, 
-	axis:'X', 
-	easing: 'cubic-bezier(.03,.98,.52,.99)', 
-	
-
-};
+import { Tilt } from '@jdion/tilt-react';
 
 const Home = () => {
 	return (
@@ -67,7 +54,20 @@ const Home = () => {
 							<ChevronRight className='w-5 h-5 mt-0.5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out' />
 						</Button>
 					</div>
-					<Tilt className='w-1/2 h-[300px] relative' option={defaultOptions}>
+					<Tilt
+						className='w-1/2 h-[300px] relative'
+						options={{
+							scale: 1,
+							speed: 300,
+							max: 15,
+							perspective: 1000,
+							easing: 'cubic-bezier(.03,.98,.52,.99)',
+							reset: true,
+							transition: true,
+							axis:null,
+							reverse: false,
+						}}
+					>
 						<div>
 							<img
 								src={About1}
@@ -79,7 +79,7 @@ const Home = () => {
 								src={About2}
 								alt='about-image'
 								loading='lazy'
-								className='absolute object-cover  h-full aspect-auto -top-[50px] -left-10 rounded-sm shadow-lg'
+								className='absolute object-cover  h-full aspect-auto -top-[50px] -left-10 rounded-sm shadow-lg '
 							/>
 						</div>
 					</Tilt>
