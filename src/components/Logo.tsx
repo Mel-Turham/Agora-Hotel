@@ -1,11 +1,11 @@
 import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Logo = ({size}:{size : string}) => {
+const Logo = () => {
 	return (
-		<Link to='/' className={`flex flex-col items-center `}>
+		<Link to='/' className={`flex flex-col items-center  `}>
 			<h1
-				className={` font-semibold text-[#908A99] mt-2 cursor-pointer text-${size}`}
+				className={` font-semibold text-[#908A99] mt-2 cursor-pointer text-4xl`}
 			>
 				Agora Hotel
 			</h1>

@@ -80,7 +80,7 @@ const Navbar = () => {
 				<hr />
 			</header>
 			<nav className='sticky top-0 z-20 flex items-center px-16 py-2 bg-white shadow-md'>
-				<Logo size='3xl'/>
+				<Logo/>
 				<menu className='flex items-center gap-8 ml-auto '>
 					{Links.map((link) => {
 						return (

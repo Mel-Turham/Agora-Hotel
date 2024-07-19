@@ -1,10 +1,13 @@
-const rooms = [
+import { Deluxe, Single, KingRome, FamilyRome, Honeymoon } from '../assets';
+import { Rooms } from '../types/types';
+
+const rooms: Rooms[] = [
 	{
-		id:1,
-		image: '',
-		name: 'Deluxe Room',
+		id: 1,
+		image: Deluxe,
+		name: 'Deluxe room',
 		price: 199,
-		romeDetails: [
+		roomDetails: [
 			{
 				label: 'Mini bar',
 				icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-martini"><path d="M8 22h8"/><path d="M12 11v11"/><path d="m19 3-7 8-7-8Z"/></svg>',
@@ -46,13 +49,13 @@ const rooms = [
 	},
 
 	{
-		id:2,
-		image: '',
-		name: 'Single Rooms',
+		id: 2,
+		image: Single,
+		name: 'Single room',
 		price: 210,
-		romeDetails: [
+		roomDetails: [
 			{
-				Label: 'Wifi',
+				label: 'Wifi',
 				icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>',
 			},
 			{
@@ -71,13 +74,13 @@ const rooms = [
 	},
 
 	{
-		id:3,
-		image: '',
-		name: 'Family Room',
+		id: 3,
+		image: FamilyRome,
+		name: 'Family room',
 		price: 189,
 		roomDetails: [
 			{
-				Label: 'Wifi',
+				label: 'Wifi',
 				icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>',
 			},
 			{
@@ -95,13 +98,14 @@ const rooms = [
 		],
 	},
 
-	{id:4,
-		image: '',
+	{
+		id: 4,
+		image: KingRome,
 		name: 'King room',
 		price: 111,
 		roomDetails: [
 			{
-				Label: 'Wifi',
+				label: 'Wifi',
 				icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>',
 			},
 			{
@@ -120,13 +124,13 @@ const rooms = [
 	},
 
 	{
-		id:5,
-		image: '',
+		id: 5,
+		image: Honeymoon,
 		name: 'Honeymoon room',
 		price: 30,
 		roomDetails: [
 			{
-				Label: 'Wifi',
+				label: 'Wifi',
 				icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>',
 			},
 			{
