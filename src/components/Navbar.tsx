@@ -1,5 +1,5 @@
 import { Phone, MailIcon, CalendarDays, ChevronRight } from 'lucide-react';
-import {NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button } from '../@/components/ui/button';
 import Logo from './Logo';
 const Links = [
@@ -35,15 +35,15 @@ const Links = [
 			},
 			{
 				to: 'full-slider',
-				label: 'Room details-Full slider',
+				label: 'Room details full slider',
 			},
 			{
 				to: 'normal-slider',
-				label: 'Room details-Normal slider',
+				label: 'Room details normal slider',
 			},
 			{
 				to: 'images',
-				label: 'Room details - images',
+				label: 'Room details images',
 			},
 		],
 	},
@@ -62,7 +62,7 @@ const Navbar = () => {
 		<>
 			<header className='flex flex-col w-full gap-2 bg-white '>
 				<div className='flex items-center justify-between px-16 py-2 text-[#908A99] text-sm font-semibold'>
-					<span>Welcome to Hotel Agora</span>
+					<span>Welcome to  Agora Hotel</span>
 					<div className='flex items-center gap-6'>
 						<a href='tel:+237 699 83 81 17' className='flex items-center gap-2'>
 							<Phone size={16} />
@@ -80,7 +80,7 @@ const Navbar = () => {
 				<hr />
 			</header>
 			<nav className='sticky top-0 z-20 flex items-center px-16 py-2 bg-white shadow-md'>
-				<Logo/>
+				<Logo />
 				<menu className='flex items-center gap-8 ml-auto '>
 					{Links.map((link) => {
 						return (
@@ -88,7 +88,7 @@ const Navbar = () => {
 								<NavLink
 									to={link.to}
 									className={({ isActive }) =>
-										`p-2 text-[15px] text-[#606060] font-black uppercase duration-300 ease-in-out flex items-center gap-1 ${
+										`p-2 text-[15px] text-[#606060] font-semibold uppercase duration-300 ease-in-out flex items-center gap-1 ${
 											isActive ? 'bg-[#deb666] text-white rounded-sm' : ''
 										}`
 									}
@@ -119,7 +119,10 @@ const Navbar = () => {
 							</li>
 						);
 					})}
-					<Button size='lg' className='gap-2 font-semibold uppercase rounded-none'>
+					<Button
+						size='lg'
+						className='gap-2 font-semibold uppercase rounded-none'
+					>
 						<CalendarDays size={18} />
 						<span>Reserver</span>
 					</Button>

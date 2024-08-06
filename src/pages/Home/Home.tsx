@@ -6,28 +6,108 @@ import { ChevronRight } from 'lucide-react';
 import About1 from '../../assets/images/about1.jpg';
 import About2 from '../../assets/images/about2.jpg';
 import { rooms } from '../../db/data';
-
 import { Tilt } from '@jdion/tilt-react';
-import { useCallback, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import CardRoom from '../../components/CardRoom';
+import { useCallback, useEffect, useState } from 'react';
+
+type guestsType = {
+	id: number;
+	older: string;
+	numberOfguest: number;
+};
+
+const guests: guestsType[] = [
+	{ id: 1, older: 'Adults', numberOfguest: 1 },
+	{
+		id: 2,
+		older: 'Children',
+		numberOfguest: 0,
+	},
+];
 
 const Home = () => {
-	const [isHovered, setIsHovered] = useState<number | null>(null);
-	const [tooltip, setTooltip] = useState<string | null>(null);
-	const handlerOnmouseEnter = useCallback((id: number) => {
-		setIsHovered(id);
-	}, []);
+	const [isHovered, setIsHoverred] = useState<number | null>(null);
+	const [show, setShow] = useState<boolean>(false);
 
-	const handlerOnmouseLeave = useCallback(() => {
-		setIsHovered(null);
-	}, []);
+	const [guestArr, setGuessArr] = useState<guestsType[]>(guests);
 
-	const handleTooltip = useCallback((label: string) => {
-		setTooltip(label);
-	}, []);
-	const handleTooltipLeave = useCallback(() => {
-		setTooltip(null);
-	}, []);
+	const handlerOver = (id: number) => {
+		setIsHoverred(id);
+	};
+
+	const handlerLeave = () => {
+		setIsHoverred(null);
+	};
+
+	const calculateTotalOfGuess = useCallback(() => {
+		const total = guestArr.reduce((acc, curr) => {
+			return acc + curr.numberOfguest;
+		}, 0);
+		return total;
+	}, [guestArr]);
+
+	useEffect(() => {
+		// console.log(calculateTotalOfGuess());
+		calculateTotalOfGuess();
+	}, [calculateTotalOfGuess]);
+
+	const Ondecrement = (id: number) => {
+		if (id == 1) {
+			const newGuess = guestArr.map((item) =>
+				item.id === id && item.numberOfguest > 1
+					? { ...item, numberOfguest: item.numberOfguest - 1 }
+					: item,
+			);
+			setGuessArr(newGuess);
+		} else {
+			const newGuess = guestArr.map((item) =>
+				item.id === id && item.numberOfguest > 0
+					? { ...item, numberOfguest: item.numberOfguest - 1 }
+					: item,
+			);
+			setGuessArr(newGuess);
+		}
+	};
+
+	const OnIncrement = (id: number) => {
+		const newGuess = guestArr.map((item) =>
+			item.id === id && item.numberOfguest < 5
+				? { ...item, numberOfguest: item.numberOfguest + 1 }
+				: item,
+		);
+		setGuessArr(newGuess);
+	};
+
+	const guestItem = guestArr.map((item) => {
+		return (
+			<div
+				key={item.id}
+				className='flex items-center justify-between w-full h-full'
+			>
+				<span className='font-semibold capitalize'>{item?.older} :</span>
+				<div className='flex items-center gap-2'>
+					<Button
+						onClick={() => Ondecrement(item.id)}
+						className='text-center rounded-none w-7 h-7'
+					>
+						-
+					</Button>
+					<span>{item?.numberOfguest}</span>
+					<Button
+						onClick={() => OnIncrement(item.id)}
+						className='text-center rounded-none w-7 h-7'
+					>
+						+
+					</Button>
+				</div>
+			</div>
+		);
+	});
+
+	const handleFocuse = () => {
+		setShow((prev) => !prev);
+	};
+
 	return (
 		<>
 			<section className='relative flex items-center justify-center w-full min-h-screen'>
@@ -37,11 +117,25 @@ const Home = () => {
 						<span className='font-semibold'>Check In/Out</span>
 						<DatePickerWithRange className='border border-solid border-[#858a99] rounded-sm py-1' />
 					</div>
-					<div className='flex flex-col w-1/3 gap-2'>
+					<div className='relative flex flex-col w-1/3 gap-2'>
 						<span className='font-semibold'>Guests</span>
-						<DatePickerWithRange className='border border-solid border-[#858a99] rounded-sm py-1' />
+						<input
+							readOnly
+							onClick={handleFocuse}
+							defaultValue={`Total of Guess ${calculateTotalOfGuess()}`}
+							className='border border-solid border-[#858a99] rounded-sm py-3 px-2 outline-none cursor-pointer'
+						/>
+
+						{show && (
+							<div className='rounded-sm shadow-lg w-[300px] py-10 px-6  flex flex-col gap-7 -top-[150px] -right-6 absolute bg-white overflow-hidden'>
+								{guestItem}
+							</div>
+						)}
 					</div>
-					<Button className='w-1/3 uppercase rounded-sm mt-8 h-[48.5px] text-[16px]'>
+					<Button
+						disabled={true}
+						className='w-1/3 uppercase rounded-sm mt-8 h-[48.5px] text-[16px] disabled:cursor-not-allowed'
+					>
 						Check availability
 					</Button>
 				</div>
@@ -86,7 +180,6 @@ const Home = () => {
 							axis: null,
 							reverse: true,
 						}}
-						
 					>
 						<div>
 							<img
@@ -106,7 +199,7 @@ const Home = () => {
 				</div>
 			</section>
 
-			<section className='bg-[#F1F0ED] h-screen px-[15px] flex flex-col items-center py-[4rem]'>
+			<section className='bg-[#F1F0ED]  px-[15px] flex flex-col items-center py-[4rem]'>
 				<Title
 					title='Our favorite rooms'
 					paragraph='Check out now our best rooms'
@@ -115,83 +208,19 @@ const Home = () => {
 
 				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%] mt-8 gap-4 px-10'>
 					{rooms.map((room) => {
+						const { image, id, price, roomDetails, name } = room;
 						return (
-							<div
-								onMouseEnter={() => handlerOnmouseEnter(room.id)}
-								onMouseLeave={handlerOnmouseLeave}
-								key={room.id}
-								className='relative overflow-hidden rounded-sm shadow-md cursor-pointer'
-							>
-								<span className='absolute px-5 py-1 font-semibold text-gray-500 bg-white rounded-sm shadow-sm top-3 right-3 text-[12px] z-10'>
-									$ {room.price} / night
-								</span>
-								<figure className='w-full h-full'>
-									<img
-										src={room.image}
-										alt={room.name}
-										loading='lazy'
-										className={`object-cover w-full h-full transition-all duration-300 ease-linear origin-left ${
-											isHovered === room.id ? 'scale-x-105' : ''
-										}`}
-									/>
-								</figure>
-								<AnimatePresence>
-									<figcaption className='absolute bottom-0 left-0 flex items-center justify-center w-full text-xl font-semibold text-gray-500 bg-white'>
-										{isHovered === room.id ? (
-											room.roomDetails.map((detail, index) => {
-												return (
-													<motion.div
-														initial={{ opacity: 0 }}
-														animate={{ opacity: 1 }}
-														transition={{ duration: 0.3, ease: 'linear' }}
-														exit={{ opacity: 0 }}
-														key={index + 1}
-														className='tooltip_container flex justify-evenly w-full h-full bg-white py-1.5'
-													>
-														<div
-															onMouseEnter={() => handleTooltip(detail.label)}
-															onMouseLeave={handleTooltipLeave}
-															className={` flex items-center justify-center p-2  w-7 h-7 border border-dashed `}
-														>
-															<img src={detail.icon} />
-															{tooltip === detail.label && (
-																<motion.div
-																	initial={{ y: 0, opacity: 0 }}
-																	animate={{ y: -60, opacity: 1 }}
-																	transition={{
-																		duration: 0.3,
-																		ease: 'linear',
-																		type: 'spring',
-																		mass: 2,
-																	}}
-																	exit={{ y: 0, opacity: 0 }}
-																	className='absolute z-20 flex flex-col items-center px-5 py-1 font-semibold bg-white rounded-sm shadow-sm tooltip w-fit text-nowrap'
-																>
-																	<span className='text-[16px] uppercase'>
-																		{detail.label}
-																	</span>
-																	<span className='text-[13px] font-normal'>
-																		{detail.label} included
-																	</span>
-																</motion.div>
-															)}
-														</div>
-													</motion.div>
-												);
-											})
-										) : (
-											<motion.span
-												className='text-center capitalize py-1.5 '
-												initial={{ opacity: 0 }}
-												animate={{ opacity: 1 }}
-												transition={{ duration: 0.3, ease: 'linear' }}
-											>
-												{room.name}
-											</motion.span>
-										)}
-									</figcaption>
-								</AnimatePresence>
-							</div>
+							<CardRoom
+								key={id}
+								image={image}
+								id={id}
+								roomDetails={roomDetails}
+								name={name}
+								price={price}
+								isHovered={isHovered}
+								onMouseEnter={handlerOver}
+								onMouseLeave={handlerLeave}
+							/>
 						);
 					})}
 				</div>
@@ -199,7 +228,7 @@ const Home = () => {
 					variant={'default'}
 					className='flex items-center p-6 mt-12 font-semibold uppercase rounded-sm w-fit group'
 				>
-					More details
+					See all rooms
 					<ChevronRight className='w-5 h-5 mt-0.5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out' />
 				</Button>
 			</section>

@@ -18,7 +18,7 @@ const Hero = () => {
 		<Carousel
 			plugins={[plugin.current]}
 			opts={{
-				align: 'center',
+				align: 'start',
 				loop: true,
 			}}
 			className=' w-[100vw] relative'

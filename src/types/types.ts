@@ -2,7 +2,6 @@ type RoomDetailsType = {
 	label: string;
 	icon: string;
 };
-
 type Rooms = {
 	id: number;
 	image: string;
