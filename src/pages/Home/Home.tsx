@@ -9,6 +9,7 @@ import { rooms } from '../../db/data';
 import { Tilt } from '@jdion/tilt-react';
 import CardRoom from '../../components/CardRoom';
 import { useCallback, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 type guestsType = {
 	id: number;
@@ -28,7 +29,6 @@ const guests: guestsType[] = [
 const Home = () => {
 	const [isHovered, setIsHoverred] = useState<number | null>(null);
 	const [show, setShow] = useState<boolean>(false);
-
 	const [guestArr, setGuessArr] = useState<guestsType[]>(guests);
 
 	const handlerOver = (id: number) => {
@@ -39,25 +39,14 @@ const Home = () => {
 		setIsHoverred(null);
 	};
 
-	const calculateTotalOfGuess = useCallback(() => {
-		const total = guestArr.reduce((acc, curr) => {
-			return acc + curr.numberOfguest;
-		}, 0);
-		return total;
-	}, [guestArr]);
-
-	useEffect(() => {
-		// console.log(calculateTotalOfGuess());
-		calculateTotalOfGuess();
-	}, [calculateTotalOfGuess]);
-
-	const Ondecrement = (id: number) => {
+	const Decrement = (id: number) => {
 		if (id == 1) {
 			const newGuess = guestArr.map((item) =>
 				item.id === id && item.numberOfguest > 1
 					? { ...item, numberOfguest: item.numberOfguest - 1 }
 					: item,
 			);
+
 			setGuessArr(newGuess);
 		} else {
 			const newGuess = guestArr.map((item) =>
@@ -69,7 +58,7 @@ const Home = () => {
 		}
 	};
 
-	const OnIncrement = (id: number) => {
+	const Increment = (id: number) => {
 		const newGuess = guestArr.map((item) =>
 			item.id === id && item.numberOfguest < 5
 				? { ...item, numberOfguest: item.numberOfguest + 1 }
@@ -78,24 +67,65 @@ const Home = () => {
 		setGuessArr(newGuess);
 	};
 
+	const totalOfGuess = useCallback(() => {
+		const total = guestArr.reduce((acc, curr) => {
+			return acc + curr.numberOfguest;
+		}, 0);
+		return total;
+	}, [guestArr]);
+
+	useEffect(() => {
+		totalOfGuess();
+	}, [totalOfGuess]);
+
+	const counterAnimateVariant = {
+		hide: {
+			y: 10,
+			opacity: 0,
+		},
+		show: {
+			y: 0,
+			opacity: 1,
+		},
+	};
+
 	const guestItem = guestArr.map((item) => {
 		return (
 			<div
 				key={item.id}
 				className='flex items-center justify-between w-full h-full'
 			>
-				<span className='font-semibold capitalize'>{item?.older} :</span>
+				<div className='flex flex-col'>
+					<span className='font-semibold capitalize'>{item?.older} :</span>
+
+					{item?.older === 'Adults' ? (
+						<span>
+							{'Age: 18+'} years old
+						</span>
+					) : (
+						<span>
+							{'Age: 1+'} years old
+						</span>
+					)}
+				</div>
 				<div className='flex items-center gap-2'>
 					<Button
-						onClick={() => Ondecrement(item.id)}
-						className='text-center rounded-none w-7 h-7'
+						onClick={() => Decrement(item.id)}
+						className='text-center rounded w-7 h-7'
 					>
 						-
 					</Button>
-					<span>{item?.numberOfguest}</span>
+					<motion.span
+						variants={counterAnimateVariant}
+						initial='hide'
+						animate={item.numberOfguest != item.numberOfguest ? 'hide' : 'show'}
+						transition={{ duration: 0.5, ease: 'easeInOut' }}
+					>
+						{item?.numberOfguest}
+					</motion.span>
 					<Button
-						onClick={() => OnIncrement(item.id)}
-						className='text-center rounded-none w-7 h-7'
+						onClick={() => Increment(item.id)}
+						className='text-center rounded w-7 h-7'
 					>
 						+
 					</Button>
@@ -104,7 +134,7 @@ const Home = () => {
 		);
 	});
 
-	const handleFocuse = () => {
+	const handleFocus = () => {
 		setShow((prev) => !prev);
 	};
 
@@ -119,17 +149,29 @@ const Home = () => {
 					</div>
 					<div className='relative flex flex-col w-1/3 gap-2'>
 						<span className='font-semibold'>Guests</span>
-						<input
-							readOnly
-							onClick={handleFocuse}
-							defaultValue={`Total of Guess ${calculateTotalOfGuess()}`}
-							className='border border-solid border-[#858a99] rounded-sm py-3 px-2 outline-none cursor-pointer'
-						/>
+						<div
+							className='border border-solid border-[#858a99] rounded-sm py-3 px-2'
+							onClick={handleFocus}
+						>
+							<label>
+								Total of Guess:{' '}
+								<input
+									readOnly
+									value={totalOfGuess()}
+									className='outline-none cursor-pointer '
+								/>
+							</label>
+						</div>
 
 						{show && (
-							<div className='rounded-sm shadow-lg w-[300px] py-10 px-6  flex flex-col gap-7 -top-[150px] -right-6 absolute bg-white overflow-hidden'>
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ duration: 0.2, ease: 'easeOut' }}
+								className='rounded-md shadow-lg w-[350px] py-10 px-6  flex flex-col gap-7 -top-[180px] absolute bg-white overflow-hidden left-[50%] translate-x-[-50%]'
+							>
 								{guestItem}
-							</div>
+							</motion.div>
 						)}
 					</div>
 					<Button
