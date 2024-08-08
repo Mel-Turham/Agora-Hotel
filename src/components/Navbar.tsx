@@ -62,15 +62,18 @@ const Navbar = () => {
 		<>
 			<header className='flex flex-col w-full gap-2 bg-white '>
 				<div className='flex items-center justify-between px-16 py-2 text-[#908A99] text-sm font-semibold'>
-					<span>Welcome to  Agora Hotel</span>
+					<span className='font-normal'>Welcome to Agora Hotel</span>
 					<div className='flex items-center gap-6'>
-						<a href='tel:+237 699 83 81 17' className='flex items-center gap-2'>
+						<a
+							href='tel:+237 699 83 81 17'
+							className='flex items-center gap-2 font-normal'
+						>
 							<Phone size={16} />
 							<span>+237-699-83-81-17</span>
 						</a>
 						<a
 							href='mailto:agoratech@gmail.com'
-							className='flex items-center gap-2'
+							className='flex items-center gap-2 font-normal'
 						>
 							<MailIcon size={16} className='mt-1' />
 							<span>agoratech@gmail.com</span>
