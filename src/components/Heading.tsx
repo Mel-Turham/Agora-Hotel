@@ -18,30 +18,37 @@ const Heading = () => {
 					Enjoy your holidays
 				</motion.h2>
 			</div>
-			<div className='flex justify-between p-4 items-center w-[50%] text-white font-normal text-[28px]'>
-				<div className='w-1/2 overflow-hidden '>
+			<div className='flex justify-between  p-4 items-center w-[50%] text-white font-normal text-[28px]'>
+				{/* Text and svg animation */}
+				<div className='w-[35%]'>
 					<motion.div
 						initial={{ x: '-110%', opacity: 0 }}
-						// animate={{ x: '0%', opacity: 1 }}
+						animate={{ x: '0%', opacity: 1 }}
 						whileInView={{ x: '0%', opacity: 1 }}
-						transition={{ duration: 0., mass: 3, ease: 'linear' }}
-						className='w-full h-2 transform skew-y-3 border-t-2 border-b-2 border-white border-solid'
+						transition={{ duration: 1, mass: 3, ease: 'linear' }}
+						className='w-full h-2 transform border-t-2 border-b-2 border-white border-solid'
 					></motion.div>
 				</div>
-				<div className='w-2/3 overflow-hidden '>
+				<div className='flex items-center justify-center overflow-hidden  w-[25%]'>
 					<motion.p
 						initial={{ y: '80%', opacity: 0 }}
 						whileInView={{ y: '0%', opacity: 1 }}
-						transition={{ duration: .5, mass: 2 , ease:'linear', type:'spring', delay:.3}}
-						className='font-semibold text-center '
+						transition={{
+							duration: 0.5,
+							mass: 2,
+							ease: 'linear',
+							type: 'spring',
+							delay: 0.3,
+						}}
+						className='py-2 text-sm font-normal text-center text-nowrap '
 					>
 						Navagio beach
 					</motion.p>
 				</div>
-				<div className='w-1/2 overflow-hidden '>
+				<div className='w-[35%]'>
 					<motion.div
 						initial={{ x: '110%', opacity: 0 }}
-						// animate={{ x: '0%', opacity: 1 }}
+						animate={{ x: '0%', opacity: 1 }}
 						whileInView={{ x: '0%', opacity: 1 }}
 						transition={{ duration: 1, mass: 3, ease: 'linear' }}
 						className='w-full h-2 border-t-2 border-b-2 border-white border-solid '

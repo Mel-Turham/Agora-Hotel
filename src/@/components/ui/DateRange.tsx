@@ -1,16 +1,19 @@
-import { addDays, format } from "date-fns";
-import { Calendar as CalendarIcon} from 'lucide-react'
-import { DateRange } from "react-day-picker";
+import { addDays, format } from 'date-fns';
+import { Calendar as CalendarIcon } from 'lucide-react';
+import { DateRange } from 'react-day-picker';
 
-import { cn } from "../../lib/utils";
+import { cn } from '../../lib/utils';
 
-import { Button } from "./button";
+import { Button } from './button';
 
-import { Calendar} from './calendar'
+import { Calendar } from './calendar';
 
-import { Popover , PopoverContent, PopoverTrigger} from "@radix-ui/react-popover";
-import { useState } from "react";
-
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from '@radix-ui/react-popover';
+import { useState } from 'react';
 
 export function DatePickerWithRange({
 	className,
@@ -22,7 +25,7 @@ export function DatePickerWithRange({
 
 	return (
 		<div className={cn('grid gap-2', className)}>
-			<Popover >
+			<Popover>
 				<PopoverTrigger asChild>
 					<Button
 						id='date'
