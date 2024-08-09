@@ -10,6 +10,7 @@ import { Tilt } from '@jdion/tilt-react';
 import CardRoom from '../../components/CardRoom';
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { PersonStanding } from 'lucide-react';
 type guestsType = {
 	id: number;
 	older: string;
@@ -77,12 +78,12 @@ const Home = () => {
 		animate: {
 			y: 0,
 			opacity: 1,
-			transition: { duration: 0.1, ease: 'easeInOut' },
+			transition: { duration: 0.3, ease: 'easeInOut' },
 		},
 		exit: (direction: number) => ({
-			y: direction > 0 ? -5 : 5,
+			y: direction > 0 ? 30 : -30,
 			opacity: 0,
-			transition: { duration: 0.1, ease: 'easeInOut' },
+			transition: { duration: 0.3, ease: 'easeInOut' },
 		}),
 	};
 
@@ -135,8 +136,9 @@ const Home = () => {
 					</AnimatePresence>
 					<Button
 						onClick={() => Increment(item.id)}
-						className='text-center rounded w-7 h-7'
-						disabled={item.numberOfguest === 5 ? true : false}
+						className={`text-center rounded w-7 h-7 ${
+							item.numberOfguest === 5 ? 'cursor-not-allowed' : 'cursor-pointer'
+						}`}
 					>
 						+
 					</Button>
@@ -144,10 +146,6 @@ const Home = () => {
 			</div>
 		);
 	});
-
-	// const handleFocus = () => {
-	// 	setShow((prev) => !prev);
-	// };
 
 	const handleFocus = useCallback(() => {
 		setShow((prev) => !prev);
@@ -165,15 +163,17 @@ const Home = () => {
 					<div className='relative flex flex-col w-1/3 gap-2'>
 						<span className='font-semibold'>Guests</span>
 						<div
-							className='border border-solid border-[#858a99] rounded-sm py-3 px-2'
+							className='border border-solid border-[#858a99] rounded-sm py-3 px-2 cursor-pointer'
 							onClick={handleFocus}
 						>
-							<label>
-								Total of Guess:{' '}
+							<label className='flex items-center gap-1 font-semibold'>
+								<div className='flex items-center'>
+									<PersonStanding className='w-5 h-5' /> Total of Guess:{' '}
+								</div>
 								<input
 									readOnly
 									value={totalOfGuess()}
-									className='outline-none cursor-pointer '
+									className='outline-none cursor-pointer'
 								/>
 							</label>
 						</div>
