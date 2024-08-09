@@ -10,6 +10,18 @@ import snowflake from '../assets/svg/snowflake.svg';
 import smartphone from '../assets/svg/smartphone.svg';
 import utensils from '../assets/svg/utensils.svg';
 import privateBalcon from '../assets/svg/balcon.svg';
+import { CarouselTypes } from '../types/types';
+import {
+	Restarant,
+	Spa,
+	Swimming,
+	Conference,
+	SwimmingIcon,
+	ConferenceIcon,
+	SpaIcon,
+	Plate
+} from '../assets/index';
+
 const rooms: Rooms[] = [
 	{
 		id: 1,
@@ -158,4 +170,35 @@ const rooms: Rooms[] = [
 	},
 ];
 
-export { rooms };
+const carouselElments: CarouselTypes[] = [
+	{
+		id: 1,
+		image: Restarant,
+		icon:Plate,
+		desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
+		title: 'Restorant',
+	},
+	{
+		id: 2,
+		image: Spa,
+		icon: SpaIcon,
+		desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
+		title: 'Spa - Beauty & Health',
+	},
+	{
+		id: 3,
+		image: Conference,
+		icon: ConferenceIcon,
+		desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
+		title: 'Conference Room',
+	},
+	{
+		id: 4,
+		image: Swimming,
+		icon: SwimmingIcon,
+		desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
+		title: 'Swimming Pool',
+	},
+];
+
+export { rooms, carouselElments };

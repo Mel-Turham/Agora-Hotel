@@ -11,6 +11,7 @@ import CardRoom from '../../components/CardRoom';
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PersonStanding } from 'lucide-react';
+import CarouselService from '../../components/CarouselService';
 type guestsType = {
 	id: number;
 	older: string;
@@ -289,6 +290,8 @@ const Home = () => {
 					<ChevronRight className='w-5 h-5 mt-0.5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out' />
 				</Button>
 			</section>
+			<CarouselService/>
+			
 		</>
 	);
 };

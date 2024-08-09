@@ -10,4 +10,12 @@ type Rooms = {
 	roomDetails: RoomDetailsType[];
 };
 
-export { type Rooms };
+type CarouselTypes = {
+	id: number;
+	image: string;
+	icon: string;
+	desc: string;
+	title: string;
+};
+
+export { type Rooms, type CarouselTypes };
