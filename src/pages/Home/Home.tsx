@@ -9,8 +9,7 @@ import { rooms } from '../../db/data';
 import { Tilt } from '@jdion/tilt-react';
 import CardRoom from '../../components/CardRoom';
 import { useCallback, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-
+import { AnimatePresence, motion } from 'framer-motion';
 type guestsType = {
 	id: number;
 	older: string;
@@ -30,6 +29,7 @@ const Home = () => {
 	const [isHovered, setIsHoverred] = useState<number | null>(null);
 	const [show, setShow] = useState<boolean>(false);
 	const [guestArr, setGuessArr] = useState<guestsType[]>(guests);
+	const [direction, setDirection] = useState(1);
 
 	const handlerOver = (id: number) => {
 		setIsHoverred(id);
@@ -56,6 +56,7 @@ const Home = () => {
 			);
 			setGuessArr(newGuess);
 		}
+		setDirection(-1);
 	};
 
 	const Increment = (id: number) => {
@@ -65,6 +66,24 @@ const Home = () => {
 				: item,
 		);
 		setGuessArr(newGuess);
+		setDirection(1);
+	};
+
+	const variants = {
+		initial: (direction: number) => ({
+			y: direction > 0 ? 30 : -30,
+			opacity: 0,
+		}),
+		animate: {
+			y: 0,
+			opacity: 1,
+			transition: { duration: 0.1, ease: 'easeInOut' },
+		},
+		exit: (direction: number) => ({
+			y: direction > 0 ? -5 : 5,
+			opacity: 0,
+			transition: { duration: 0.1, ease: 'easeInOut' },
+		}),
 	};
 
 	const totalOfGuess = useCallback(() => {
@@ -78,17 +97,6 @@ const Home = () => {
 		totalOfGuess();
 	}, [totalOfGuess]);
 
-	const counterAnimateVariant = {
-		hide: {
-			y: 10,
-			opacity: 0,
-		},
-		show: {
-			y: 0,
-			opacity: 1,
-		},
-	};
-
 	const guestItem = guestArr.map((item) => {
 		return (
 			<div
@@ -99,33 +107,36 @@ const Home = () => {
 					<span className='font-semibold capitalize'>{item?.older} :</span>
 
 					{item?.older === 'Adults' ? (
-						<span>
-							{'Age: 18+'} years old
-						</span>
+						<span>{'Age: 18+'} years old</span>
 					) : (
-						<span>
-							{'Age: 1+'} years old
-						</span>
+						<span>{'Age: 1+'} years old</span>
 					)}
 				</div>
-				<div className='flex items-center gap-2'>
+				<div className='flex items-center gap-2 overflow-auto'>
 					<Button
 						onClick={() => Decrement(item.id)}
 						className='text-center rounded w-7 h-7'
 					>
 						-
 					</Button>
-					<motion.span
-						variants={counterAnimateVariant}
-						initial='hide'
-						animate={item.numberOfguest != item.numberOfguest ? 'hide' : 'show'}
-						transition={{ duration: 0.5, ease: 'easeInOut' }}
-					>
-						{item?.numberOfguest}
-					</motion.span>
+					<AnimatePresence custom={direction}>
+						<div className='flex items-center justify-center overflow-hidden'>
+							<motion.div
+								key={item.numberOfguest}
+								custom={direction}
+								initial='initial'
+								animate='animate'
+								exit='exit'
+								variants={variants}
+							>
+								{item.numberOfguest}
+							</motion.div>
+						</div>
+					</AnimatePresence>
 					<Button
 						onClick={() => Increment(item.id)}
 						className='text-center rounded w-7 h-7'
+						disabled={item.numberOfguest === 5 ? true : false}
 					>
 						+
 					</Button>
@@ -134,9 +145,13 @@ const Home = () => {
 		);
 	});
 
-	const handleFocus = () => {
+	// const handleFocus = () => {
+	// 	setShow((prev) => !prev);
+	// };
+
+	const handleFocus = useCallback(() => {
 		setShow((prev) => !prev);
-	};
+	}, []);
 
 	return (
 		<>

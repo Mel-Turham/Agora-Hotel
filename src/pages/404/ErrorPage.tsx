@@ -13,9 +13,9 @@ const ErrorPage = () => {
 					nobis.
 				</p>
 				<div className='flex items-center justify-center'>
-					<Button className='mx-auto'>
-						<ChevronLeft />
-						<Link to='/'>Back home</Link>
+					<Button className='flex items-center justify-center'>
+						<ChevronLeft width={20} height={20} />
+						<Link to='/'>Back Home</Link>
 					</Button>
 				</div>
 			</div>

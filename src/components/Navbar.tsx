@@ -66,16 +66,16 @@ const Navbar = () => {
 					<div className='flex items-center gap-6'>
 						<a
 							href='tel:+237 699 83 81 17'
-							className='flex items-center gap-2 font-normal'
+							className='flex items-center gap-1 font-normal'
 						>
 							<Phone size={16} />
 							<span>+237-699-83-81-17</span>
 						</a>
 						<a
 							href='mailto:agoratech@gmail.com'
-							className='flex items-center gap-2 font-normal'
+							className='flex items-center gap-1 font-normal'
 						>
-							<MailIcon size={16} className='mt-1' />
+							<MailIcon size={16} />
 							<span>agoratech@gmail.com</span>
 						</a>
 					</div>
