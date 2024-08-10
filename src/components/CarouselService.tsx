@@ -1,16 +1,24 @@
 import Title from './Title';
 import { carouselElments as data } from '../db/data';
 import { motion } from 'framer-motion';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const CarouselService = () => {
 	const [index, setIndex] = useState(0);
+	const totalItems = data.length * 2;
 	const handleNext = useCallback(
 		(i: number) => {
 			setIndex(i);
 		},
 		[setIndex],
 	);
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setIndex((prevIndex) => (prevIndex + 2) % totalItems);
+		}, 3000); // Change image every 3 seconds
+
+		return () => clearInterval(interval); // Clear interval on component unmount
+	}, [totalItems]);
 	return (
 		<section className='px-[15px] flex flex-col items-center py-[4rem]'>
 			<Title
