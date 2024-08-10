@@ -12,6 +12,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PersonStanding } from 'lucide-react';
 import CarouselService from '../../components/CarouselService';
+import Video from './Video';
 type guestsType = {
 	id: number;
 	older: string;
@@ -291,7 +292,7 @@ const Home = () => {
 				</Button>
 			</section>
 			<CarouselService/>
-			
+			<Video/>
 		</>
 	);
 };
