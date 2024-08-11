@@ -12,7 +12,9 @@ import SpaIcon from './images/spa.png';
 import SwimmingIcon from './images/swimmer.png';
 import ConferenceIcon from './images/conference.png';
 import Plate from './images/plate.png'
-
+import Santorini from './images/santorini.jpg'
+import Zakynthos from './images/zakynthos.jpg'
+import Acropolis from './images/acropolis.jpg'
 export {
 	SpaIcon,
 	RestarantIcon,
@@ -27,5 +29,8 @@ export {
 	Conference,
 	ConferenceIcon,
 	SwimmingIcon,
-  Plate
+  Plate, 
+	Santorini,
+	Zakynthos,
+	Acropolis
 };
