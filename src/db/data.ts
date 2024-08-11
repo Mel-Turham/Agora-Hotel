@@ -1,5 +1,14 @@
-import { Deluxe, Single, KingRome, FamilyRome, Honeymoon } from '../assets';
-import { Rooms } from '../types/types';
+import {
+	Deluxe,
+	Single,
+	KingRome,
+	FamilyRome,
+	Honeymoon,
+	Acropolis,
+	Santorini,
+	Zakynthos,
+} from '../assets';
+import { DiscoverTypes, Rooms } from '../types/types';
 import wifi from '../assets/svg/wifi.svg';
 import coffee from '../assets/svg/coffee.svg';
 import martini from '../assets/svg/martini.svg';
@@ -19,7 +28,7 @@ import {
 	SwimmingIcon,
 	ConferenceIcon,
 	SpaIcon,
-	Plate
+	Plate,
 } from '../assets/index';
 
 const rooms: Rooms[] = [
@@ -174,7 +183,7 @@ const carouselElments: CarouselTypes[] = [
 	{
 		id: 1,
 		image: Restarant,
-		icon:Plate,
+		icon: Plate,
 		desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
 		title: 'Restorant',
 	},
@@ -201,4 +210,15 @@ const carouselElments: CarouselTypes[] = [
 	},
 ];
 
-export { rooms, carouselElments };
+const DiscoverData: DiscoverTypes[] = [
+	{ id: 1, image: Swimming, title: 'Navagio' },
+	{
+		id: 2,
+		image: Zakynthos,
+		title: 'Zakynthos',
+	},
+	{ id: 3, image: Santorini, title: 'Santorini' },
+	{ id: 4, image: Acropolis, title: 'Acropolis' },
+];
+
+export { rooms, carouselElments, DiscoverData };

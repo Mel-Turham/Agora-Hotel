@@ -17,5 +17,10 @@ type CarouselTypes = {
 	desc: string;
 	title: string;
 };
+type DiscoverTypes = {
+	id: number;
+	image: string;
+	title: string;
+};
 
-export { type Rooms, type CarouselTypes };
+export { type Rooms, type CarouselTypes, type DiscoverTypes };

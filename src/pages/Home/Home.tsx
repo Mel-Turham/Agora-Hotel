@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { PersonStanding } from 'lucide-react';
 import CarouselService from '../../components/CarouselService';
 import Video from './Video';
+import Discover from './Discover';
 type guestsType = {
 	id: number;
 	older: string;
@@ -293,6 +294,7 @@ const Home = () => {
 			</section>
 			<CarouselService />
 			<Video />
+			<Discover/>
 		</>
 	);
 };

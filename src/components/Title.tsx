@@ -1,3 +1,4 @@
+type alignType = 'center' | 'start' | 'end';
 const Title = ({
 	title,
 	paragraph,
@@ -5,7 +6,7 @@ const Title = ({
 }: {
 	title: string;
 	paragraph: string;
-	align?: string;
+	align?: alignType;
 }) => {
 	return (
 		<>

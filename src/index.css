@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 h1,
 h2,
 h4,
@@ -24,17 +22,28 @@ h3 {
 	font-family: 'Nunito', sans-serif;
 }
 
-.room :nth-child(1){
+.room :nth-child(1) {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 1;
 	grid-row-end: 3;
 }
 
-.tooltip_container:nth-child(1) .tooltip{
+.tooltip_container:nth-child(1) .tooltip {
 	margin-left: 5rem;
 }
 
-.tooltip_container:last-child .tooltip{
+.tooltip_container:last-child .tooltip {
 	margin-right: 7.5rem;
+}
+
+/* Discover section style */
+
+.grid-cover :nth-child(1) {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.grid-cover :nth-child(2) {
+	grid-column: span 2;
 }
