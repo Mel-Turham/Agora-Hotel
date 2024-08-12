@@ -39,10 +39,10 @@ const Video = () => {
 			<AnimatePresence>
 				{openVideoModel && (
 					<motion.div
-						initial={{ opacity: 0, scale: 0.5 }}
-						animate={{ opacity: 1, scale: 1 }}
-						exit={{ opacity: 0, scale: 0.5 }}
-						transition={{ duration: 0.3, ease: 'easeInOut' }}
+						initial={{ opacity: 0}}
+						animate={{ opacity: 1}}
+						exit={{ opacity: 0, }}
+						transition={{ duration: 0.5}}
 						className='w-[1000px] h-[480px] bg-black fixed rounded-lg overflow-hidden'
 					>
 						<button title='Close (Esc)' onClick={onClose}>
