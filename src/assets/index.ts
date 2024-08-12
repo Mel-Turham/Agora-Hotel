@@ -11,10 +11,13 @@ import RestarantIcon from './images/conference.png';
 import SpaIcon from './images/spa.png';
 import SwimmingIcon from './images/swimmer.png';
 import ConferenceIcon from './images/conference.png';
-import Plate from './images/plate.png'
-import Santorini from './images/santorini.jpg'
-import Zakynthos from './images/zakynthos.jpg'
-import Acropolis from './images/acropolis.jpg'
+import Plate from './images/plate.png';
+import Santorini from './images/santorini.jpg';
+import Zakynthos from './images/zakynthos.jpg';
+import Acropolis from './images/acropolis.jpg';
+import User_1 from './images/user1.jpg';
+import User_2 from './images/user2.jpg';
+import User_3 from './images/user3.jpg';
 export {
 	SpaIcon,
 	RestarantIcon,
@@ -29,8 +32,11 @@ export {
 	Conference,
 	ConferenceIcon,
 	SwimmingIcon,
-  Plate, 
+	Plate,
 	Santorini,
 	Zakynthos,
-	Acropolis
+	Acropolis,
+	User_1,
+	User_2,
+	User_3,
 };
