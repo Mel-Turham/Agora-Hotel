@@ -7,8 +7,11 @@ import {
 	Acropolis,
 	Santorini,
 	Zakynthos,
+	User_1,
+	User_2,
+	User_3,
 } from '../assets';
-import { DiscoverTypes, Rooms } from '../types/types';
+import { DiscoverTypes, Rooms, TestimonialsTypes } from '../types/types';
 import wifi from '../assets/svg/wifi.svg';
 import coffee from '../assets/svg/coffee.svg';
 import martini from '../assets/svg/martini.svg';
@@ -221,4 +224,40 @@ const DiscoverData: DiscoverTypes[] = [
 	{ id: 4, image: Acropolis, title: 'Acropolis' },
 ];
 
-export { rooms, carouselElments, DiscoverData };
+const TestimonialsArray: TestimonialsTypes[] = [
+	{
+		id: 1,
+		feedBack: 'Nice Place',
+		raitingUser: 5,
+		comment:
+			'Fantastic location in a historic renovated monastery in the heart of the Castro. Staff were helpful and knowledgeable and everything in easy walking distance.',
+		UserImage: User_2,
+		UserName: 'Ina Aldrich',
+		country: 'Greece',
+		capital: 'Athens,',
+	},
+	{
+		id: 2,
+		feedBack: 'Perfect',
+		raitingUser: 5,
+		comment:
+			'The owner and staff were extremely helpful and kind and took time to ensure that we had extra information on things to do in the area and places to visit.',
+		UserImage: User_1,
+		UserName: 'John Doe',
+		country: 'Italy',
+		capital: 'Rome',
+	},
+	{
+		id: 3,
+		feedBack: 'Good choice',
+		raitingUser: 5,
+		comment:
+			"Extremely nice environment, the room was great, the service was awesome, really helpful and great service I'll visit them again in the near future.",
+		UserImage: User_3,
+		UserName: 'William W',
+		country: 'Portugal',
+		capital: 'Lisbone',
+	},
+];
+
+export { rooms, carouselElments, DiscoverData, TestimonialsArray };

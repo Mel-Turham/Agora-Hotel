@@ -14,6 +14,7 @@ import { PersonStanding } from 'lucide-react';
 import CarouselService from '../../components/CarouselService';
 import Video from './Video';
 import Discover from './Discover';
+import Testimonials from './Testimonials';
 type guestsType = {
 	id: number;
 	older: string;
@@ -295,6 +296,7 @@ const Home = () => {
 			<CarouselService />
 			<Video />
 			<Discover/>
+			<Testimonials/>
 		</>
 	);
 };
