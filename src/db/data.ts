@@ -234,7 +234,7 @@ const TestimonialsArray: TestimonialsTypes[] = [
 		UserImage: User_2,
 		UserName: 'Ina Aldrich',
 		country: 'Greece',
-		capital: 'Athens,',
+		capital: 'Athens',
 	},
 	{
 		id: 2,

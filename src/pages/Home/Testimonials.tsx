@@ -19,9 +19,8 @@ const Testimonials = () => {
 				</Button>
 			</div>
 			<div className='mt-[4rem] flex  relative gap-8'>
-				{data.map((data, index) => {
+				{data.map((data) => {
 					const {
-						id,
 						UserImage,
 						UserName,
 						comment,
@@ -29,11 +28,11 @@ const Testimonials = () => {
 						raitingUser,
 						feedBack,
 						capital,
+            id
 					} = data;
 					return (
 						<CardTestimonial
-							id={id}
-							key={index}
+							key={id}
 							feedBack={feedBack}
 							UserImage={UserImage}
 							UserName={UserName}
