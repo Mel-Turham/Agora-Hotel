@@ -28,7 +28,7 @@ const Testimonials = () => {
 						raitingUser,
 						feedBack,
 						capital,
-            id
+						id,
 					} = data;
 					return (
 						<CardTestimonial

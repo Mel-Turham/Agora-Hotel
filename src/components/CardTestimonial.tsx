@@ -34,23 +34,16 @@ const CardTestimonial = ({
 				<p className='text-[#858a99]  text-center leading-6  text-sm mt-4'>
 					{comment}
 				</p>
-				{/* <ChevronDown
-					fill='#fff'
-					strokeWidth={1}
-					className='absolute text-gray-100 -bottom-6 left-[85px] '
-					width={60}
-					height={40}
-				/> */}
 				<div className='absolute  -bottom-2 left-[110px] border-t-[9px] border-b-0 border-solid border-t-white border-x-transparent border-x-[15px]'></div>
 			</div>
-			<div className='flex items-center gap-3 mt-2'>
+			<div className='flex items-center mt-2'>
 				<img
 					src={UserImage}
 					alt={UserName}
 					loading='lazy'
 					className='rounded-full'
 				/>
-				<div className=''>
+				<div className='ml-3'>
 					<h4 className='text-lg capitalize text-[#606060] font-medium'>
 						{UserName}
 					</h4>
