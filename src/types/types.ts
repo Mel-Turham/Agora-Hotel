@@ -39,7 +39,7 @@ type EventsTypes = {
 	titleEvent: string;
 	descEvent: string;
 	EventAuthor: string;
-	EventDate: string;
+	EventDate: Date | null;
 	Comments: number;
 };
 

@@ -10,8 +10,16 @@ import {
 	User_1,
 	User_2,
 	User_3,
+	Event_1,
+	Event_2,
+	Event_3,
 } from '../assets';
-import { DiscoverTypes, EventsTypes, Rooms, TestimonialsTypes } from '../types/types';
+import {
+	DiscoverTypes,
+	EventsTypes,
+	Rooms,
+	TestimonialsTypes,
+} from '../types/types';
 import wifi from '../assets/svg/wifi.svg';
 import coffee from '../assets/svg/coffee.svg';
 import martini from '../assets/svg/martini.svg';
@@ -260,34 +268,43 @@ const TestimonialsArray: TestimonialsTypes[] = [
 	},
 ];
 
-const cartEventArray:EventsTypes[] = [
+const cartEventArray: EventsTypes[] = [
 	{
-		id:1,
-		image:'',
-		titleEvent:'',
-		descEvent:'',
-		EventAuthor:'',
-		EventDate:'',
-		Comments:4
+		id: 1,
+		image: Event_2,
+		titleEvent: 'Hotel Zante in pictures',
+		descEvent:
+			'  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, ratione inventore. Esse deserunt ad atque autem ex ullam? Nemo porro vitae nisi placeat quam adipisci eum, incidunt similique maxime, quibusdam nesciunt perferendis dolorem, obcaecati beatae libero. Magni praesentium, veritatis sapiente placeat ullam reprehenderit. Voluptates rerum perspiciatis rem suscipit laborum odio.  ',
+		EventAuthor: 'Admin',
+		EventDate: new Date(),
+		Comments: 8,
 	},
 	{
-		id:2,
-		image:'',
-		titleEvent:'',
-		descEvent:'',
-		EventAuthor:'',
-		EventDate:'',
-		Comments:4
+		id: 2,
+		image: Event_1,
+		titleEvent: '10 Things You Should Know',
+		descEvent:
+			' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, maiores eaque! Consequatur unde, deserunt repellat error fugiat ipsa possimus ducimus accusantium adipisci provident illum soluta officiis, totam laudantium sint facilis dolorem quibusdam facere recusandae rem, repellendus eum voluptatum alias. Aliquid eaque molestias ipsam modi et eligendi sequi sunt tempora magni? ',
+		EventAuthor: 'Admin',
+		EventDate: new Date(),
+		Comments: 4,
 	},
 	{
-		id:3,
-		image:'',
-		titleEvent:'',
-		descEvent:'',
-		EventAuthor:'',
-		EventDate:'',
-		Comments:0
+		id: 3,
+		image: Event_3,
+		titleEvent: 'Hotel Zante Weddings',
+		descEvent:
+			' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusantium ipsa est reprehenderit rerum pariatur? Sunt, optio porro. Dignissimos, repellat corrupti. Eos, voluptatum incidunt accusamus cum quaerat laborum nihil, sequi vel odit, nam numquam! Aliquid voluptates numquam quibusdam fuga temporibus delectus facilis cumque laborum voluptate aspernatur? Autem commodi consequuntur mollitia. ',
+		EventAuthor: 'Admin',
+		EventDate: new Date(),
+		Comments: 0,
 	},
-]
+];
 
-export { rooms, carouselElments, DiscoverData, TestimonialsArray , cartEventArray};
+export {
+	rooms,
+	carouselElments,
+	DiscoverData,
+	TestimonialsArray,
+	cartEventArray,
+};
