@@ -18,6 +18,9 @@ import Acropolis from './images/acropolis.jpg';
 import User_1 from './images/user1.jpg';
 import User_2 from './images/user2.jpg';
 import User_3 from './images/user3.jpg';
+import Event_1 from './images/event_1.jpg'
+import Event_2 from './images/envent_2.jpg'
+import Event_3 from './images/event_3.jpg'
 export {
 	SpaIcon,
 	RestarantIcon,
@@ -39,4 +42,7 @@ export {
 	User_1,
 	User_2,
 	User_3,
+	Event_1,
+	Event_2,
+	Event_3
 };
