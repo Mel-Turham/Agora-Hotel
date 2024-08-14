@@ -33,9 +33,20 @@ type TestimonialsTypes = {
 	capital: string;
 };
 
+type EventsTypes = {
+	id: number;
+	image: string;
+	titleEvent: string;
+	descEvent: string;
+	EventAuthor: string;
+	EventDate: string;
+	Comments: number;
+};
+
 export {
 	type Rooms,
 	type CarouselTypes,
 	type DiscoverTypes,
 	type TestimonialsTypes,
+	type EventsTypes,
 };

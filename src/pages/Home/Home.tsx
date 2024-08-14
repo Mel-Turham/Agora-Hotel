@@ -15,6 +15,7 @@ import CarouselService from '../../components/CarouselService';
 import Video from './Video';
 import Discover from './Discover';
 import Testimonials from './Testimonials';
+import Events from './Events';
 type guestsType = {
 	id: number;
 	older: string;
@@ -295,8 +296,9 @@ const Home = () => {
 			</section>
 			<CarouselService />
 			<Video />
-			<Discover/>
-			<Testimonials/>
+			<Discover />
+			<Testimonials />
+			<Events />
 		</>
 	);
 };

@@ -11,7 +11,7 @@ import {
 	User_2,
 	User_3,
 } from '../assets';
-import { DiscoverTypes, Rooms, TestimonialsTypes } from '../types/types';
+import { DiscoverTypes, EventsTypes, Rooms, TestimonialsTypes } from '../types/types';
 import wifi from '../assets/svg/wifi.svg';
 import coffee from '../assets/svg/coffee.svg';
 import martini from '../assets/svg/martini.svg';
@@ -260,4 +260,34 @@ const TestimonialsArray: TestimonialsTypes[] = [
 	},
 ];
 
-export { rooms, carouselElments, DiscoverData, TestimonialsArray };
+const cartEventArray:EventsTypes[] = [
+	{
+		id:1,
+		image:'',
+		titleEvent:'',
+		descEvent:'',
+		EventAuthor:'',
+		EventDate:'',
+		Comments:4
+	},
+	{
+		id:2,
+		image:'',
+		titleEvent:'',
+		descEvent:'',
+		EventAuthor:'',
+		EventDate:'',
+		Comments:4
+	},
+	{
+		id:3,
+		image:'',
+		titleEvent:'',
+		descEvent:'',
+		EventAuthor:'',
+		EventDate:'',
+		Comments:0
+	},
+]
+
+export { rooms, carouselElments, DiscoverData, TestimonialsArray , cartEventArray};
