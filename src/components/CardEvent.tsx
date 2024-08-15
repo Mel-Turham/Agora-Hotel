@@ -20,7 +20,7 @@ const CardEvent = ({
 	const day = EventDate?.getDate()
 	return (
 		<article className='border border-gray-100 border-solid shadow-sm'>
-			<figure className='h-[250px] w-full  overflow-hidden rounded-sm'>
+			<figure className='h-[250px] w-full  overflow-hidden'>
 				<img
 					src={image}
 					alt={titleEvent}
@@ -34,7 +34,7 @@ const CardEvent = ({
 					{descEvent}
 				</p>
 
-				<div className='flex flex-wrap items-center gap-6'>
+				<div className='flex flex-wrap items-center gap-x-6 gap-y-1'>
 					<div className='flex items-center gap-1'>
 						<CircleUserRound width={18} className='text-gray-400' />
 						<span className='text-sm font-semibold text-gray-400 uppercase'>
