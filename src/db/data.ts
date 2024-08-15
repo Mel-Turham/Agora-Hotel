@@ -271,7 +271,7 @@ const TestimonialsArray: TestimonialsTypes[] = [
 const cartEventArray: EventsTypes[] = [
 	{
 		id: 1,
-		image: Event_2,
+		image: Event_3,
 		titleEvent: 'Hotel Zante in pictures',
 		descEvent:
 			'  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, ratione inventore. Esse deserunt ad atque autem ex ullam? Nemo porro vitae nisi placeat quam adipisci eum, incidunt similique maxime, quibusdam nesciunt perferendis dolorem, obcaecati beatae libero. Magni praesentium, veritatis sapiente placeat ullam reprehenderit. Voluptates rerum perspiciatis rem suscipit laborum odio.  ',
@@ -281,7 +281,7 @@ const cartEventArray: EventsTypes[] = [
 	},
 	{
 		id: 2,
-		image: Event_1,
+		image: Event_2,
 		titleEvent: '10 Things You Should Know',
 		descEvent:
 			' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, maiores eaque! Consequatur unde, deserunt repellat error fugiat ipsa possimus ducimus accusantium adipisci provident illum soluta officiis, totam laudantium sint facilis dolorem quibusdam facere recusandae rem, repellendus eum voluptatum alias. Aliquid eaque molestias ipsam modi et eligendi sequi sunt tempora magni? ',
@@ -291,7 +291,7 @@ const cartEventArray: EventsTypes[] = [
 	},
 	{
 		id: 3,
-		image: Event_3,
+		image: Event_1,
 		titleEvent: 'Hotel Zante Weddings',
 		descEvent:
 			' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusantium ipsa est reprehenderit rerum pariatur? Sunt, optio porro. Dignissimos, repellat corrupti. Eos, voluptatum incidunt accusamus cum quaerat laborum nihil, sequi vel odit, nam numquam! Aliquid voluptates numquam quibusdam fuga temporibus delectus facilis cumque laborum voluptate aspernatur? Autem commodi consequuntur mollitia. ',

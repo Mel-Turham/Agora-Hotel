@@ -25,6 +25,7 @@ const Events = () => {
 					} = data;
 					return (
 						<CardEvent
+							key={data.id}
 							image={image}
 							descEvent={descEvent}
 							EventAuthor={EventAuthor}

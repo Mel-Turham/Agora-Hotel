@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Logo = () => {
 	return (
-		<Link to='/' className={`flex flex-col items-center  `}>
+		<Link to='/' className={`flex flex-col items-center w-fit `}>
 			<h1
-				className={` font-semibold text-[#908A99] mt-2 cursor-pointer text-4xl`}
+				className={` font-medium text-[#908A99]  cursor-pointer text-3xl`}
 			>
 				Agora Hotel
 			</h1>
