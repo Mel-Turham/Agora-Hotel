@@ -13,8 +13,12 @@ import {
 	Event_1,
 	Event_2,
 	Event_3,
+	Zanta_greece,
+	Zanta_italy,
+	Zanta_uk,
 } from '../assets';
 import {
+	BranchesType,
 	DiscoverTypes,
 	EventsTypes,
 	Rooms,
@@ -301,10 +305,38 @@ const cartEventArray: EventsTypes[] = [
 	},
 ];
 
+const branches:BranchesType[] = [
+	{
+		id:1,
+		figure:Zanta_greece,
+		localisation:'Navagio, Greece',
+		phone:'+237-699-83-81-17',
+		email:'greece@gmail.com',
+		city:'Agora Greece'
+	},
+	{
+		id:2,
+		figure:Zanta_italy,
+		localisation:'Rome, italy',
+		phone:'+237-699-83-81-17',
+		email:'italy@gmail.com',
+		city:'Agora Italy'
+	},
+	{
+		id:3,
+		figure:Zanta_uk,
+		localisation:'London, UK',
+		phone:'+237-699-83-81-17',
+		email:'Uk@gmail.com',
+		city:'Agora UK'
+	},
+]
+
 export {
 	rooms,
 	carouselElments,
 	DiscoverData,
 	TestimonialsArray,
 	cartEventArray,
+	branches
 };

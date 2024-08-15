@@ -43,10 +43,20 @@ type EventsTypes = {
 	Comments: number;
 };
 
+type BranchesType = {
+	id: number;
+	figure:string,
+	localisation:string,
+	phone:string,
+	email:string,
+	city:string
+};
+
 export {
 	type Rooms,
 	type CarouselTypes,
 	type DiscoverTypes,
 	type TestimonialsTypes,
 	type EventsTypes,
+	type BranchesType
 };
