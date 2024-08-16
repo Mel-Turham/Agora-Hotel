@@ -16,6 +16,7 @@ import Video from './Video';
 import Discover from './Discover';
 import Testimonials from './Testimonials';
 import Events from './Events';
+import { Link } from 'react-router-dom';
 type guestsType = {
 	id: number;
 	older: string;
@@ -269,7 +270,7 @@ const Home = () => {
 				/>
 
 				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%]  gap-4 px-10 mt-10'>
-					{rooms.map((room) => {
+					{rooms.slice(0, 5).map((room) => {
 						const { image, id, price, roomDetails, name } = room;
 						return (
 							<CardRoom
@@ -286,13 +287,15 @@ const Home = () => {
 						);
 					})}
 				</div>
-				<Button
-					variant={'default'}
-					className='flex items-center p-6 mt-12 font-semibold uppercase rounded-sm w-fit group'
-				>
-					See all rooms
-					<ChevronRight className='w-5 h-5 mt-0.5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out' />
-				</Button>
+				<Link to='rooms'>
+					<Button
+						variant={'default'}
+						className='flex items-center p-6 mt-12 font-semibold uppercase rounded-sm w-fit group'
+					>
+						See all rooms
+						<ChevronRight className='w-5 h-5 mt-0.5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out' />
+					</Button>
+				</Link>
 			</section>
 			<CarouselService />
 			<Video />

@@ -25,8 +25,8 @@ const Video = () => {
 		setOpenVideoModel(false);
 	};
 	return (
-		<section className='flex items-center justify-center w-full mt-5 bg-fixed bg-center bg-cover brightness-75 bg-bg-video h-[80vh]'>
-			<div>
+		<section className='flex items-center justify-center w-full mt-5 bg-fixed bg-center bg-cover brightness-75 bg-bg-video'>
+			<div className='h-[500px] flex items-center justify-center'>
 				<PlayCircleIcon
 					width={120}
 					height={150}
@@ -36,7 +36,7 @@ const Video = () => {
 					onClick={() => setOpenVideoModel(true)}
 				/>
 			</div>
-			<AnimatePresence>
+			<AnimatePresence mode='popLayout'>
 				{openVideoModel && (
 					<motion.div
 						initial={{ opacity: 0}}

@@ -43,7 +43,7 @@ const CarouselService = () => {
 								src={item.image}
 								alt={item.title}
 								loading='lazy'
-								className='object-cover w-full h-full brightness-60'
+								className='object-cover h-full brightness-60'
 							/>
 						);
 					})}

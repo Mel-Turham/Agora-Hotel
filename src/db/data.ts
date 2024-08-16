@@ -4,6 +4,7 @@ import {
 	KingRome,
 	FamilyRome,
 	Honeymoon,
+	Double,
 	Acropolis,
 	Santorini,
 	Zakynthos,
@@ -173,6 +174,30 @@ const rooms: Rooms[] = [
 		image: Honeymoon,
 		name: 'Honeymoon room',
 		price: 30,
+		roomDetails: [
+			{
+				label: 'Wifi',
+				icon: wifi,
+			},
+			{
+				label: 'Private balcony',
+				icon: privateBalcon,
+			},
+			{
+				label: 'Sauna',
+				icon: bed,
+			},
+			{
+				label: 'Break fast',
+				icon: utensils,
+			},
+		],
+	},
+	{
+		id: 6,
+		image: Double,
+		name: 'Double room',
+		price: 89,
 		roomDetails: [
 			{
 				label: 'Wifi',
