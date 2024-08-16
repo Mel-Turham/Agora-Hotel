@@ -158,7 +158,7 @@ const Home = () => {
 
 	return (
 		<>
-			<section className='relative flex items-center justify-center w-full min-h-screen'>
+			<section className='relative flex items-center justify-center w-full'>
 				<Hero />
 				<div className='absolute top-[100%] left-[50%] w-[90%] translate-x-[-50%] translate-y-[-50%] bg-white  rounded-[4px] shadow-md text-[#858a99] z-10 flex items-center px-6 py-8 gap-6'>
 					<div className='flex flex-col w-1/3 gap-2'>
@@ -202,7 +202,7 @@ const Home = () => {
 					</Button>
 				</div>
 			</section>
-			<section className=' min-h-screen px-[15px] bg-gray-100/25 grid items-center '>
+			<section className=' px-[15px] bg-gray-100/25 grid items-center py-20'>
 				<div className='flex items-center  justify-between w-[95%] mx-auto h-[500px]  px-3'>
 					<div className='flex flex-col w-1/2 gap-[2rem]'>
 						<div className='flex flex-col gap-[10px]'>
@@ -268,7 +268,7 @@ const Home = () => {
 					align='center'
 				/>
 
-				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%] mt-8 gap-4 px-10'>
+				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%]  gap-4 px-10 mt-10'>
 					{rooms.map((room) => {
 						const { image, id, price, roomDetails, name } = room;
 						return (

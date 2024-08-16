@@ -18,12 +18,12 @@ const Hero = () => {
 		<Carousel
 			plugins={[plugin.current]}
 			opts={{
-				align: 'start',
+				align: 'center',
 				loop: true,
 			}}
-			className=' w-[100vw] relative'
+			className='relative '
 		>
-			<CarouselContent className='h-screen'>
+			<CarouselContent className='h-full'>
 				<CarouselItem className='relative pl-0'>
 					<motion.img
 						initial={{ opacity: 0 }}
@@ -67,7 +67,6 @@ const Hero = () => {
 				<CarouselPrevious />
 				<CarouselNext />
 			</div>
-
 		</Carousel>
 	);
 };

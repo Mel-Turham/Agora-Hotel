@@ -60,7 +60,7 @@ const Links = [
 const Navbar = () => {
 	return (
 		<>
-			<header className='flex flex-col w-full gap-2 bg-white'>
+			<header className='flex flex-col w-full gap-2 bg-white max-w-[1268px] mx-auto'>
 				<div className='flex items-center justify-between px-16 py-2 text-[#908A99] text-sm font-semibold'>
 					<span className='font-normal'>Welcome to Agora Hotel</span>
 					<div className='flex items-center gap-6'>
@@ -82,7 +82,7 @@ const Navbar = () => {
 				</div>
 				<hr />
 			</header>
-			<nav className='sticky top-0 z-20 flex items-center px-16 py-4 bg-white shadow-sm'>
+			<nav className='sticky top-0 z-20 flex items-center px-16 py-4 mx-auto bg-white shadow-sm max-w-[1268px]'>
 				<Logo />
 				<menu className='flex items-center gap-8 ml-auto '>
 					{Links.map((link) => {

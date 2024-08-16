@@ -15,7 +15,7 @@ import Container from './Container';
 const Footer = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	return (
-		<footer className='py-4 border-t border-gray-200 border-solid divide-y shadow-md '>
+		<footer className='py-4 border-t border-gray-200 border-solid divide-y shadow-md max-w-[1248px] mx-auto'>
 			<Container>
 				<div className='flex justify-between gap-3 py-8'>
 					<div className='flex flex-col w-1/4 gap-2'>
