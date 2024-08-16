@@ -3,6 +3,7 @@ import Single from './images/single.jpg';
 import KingRome from './images/king-room.jpg';
 import FamilyRome from './images/family-room.jpg';
 import Honeymoon from './images/honeymoon.jpg';
+import Double from './images/double.jpg'
 import Restarant from './images/restaurant.jpg';
 import Spa from './images/spa.jpg';
 import Swimming from './images/swimming.jpg';
@@ -32,6 +33,7 @@ export {
 	KingRome,
 	FamilyRome,
 	Honeymoon,
+	Double,
 	Restarant,
 	Spa,
 	Swimming,
