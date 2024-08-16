@@ -33,7 +33,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage:{
-        'bg-video':"url('./src/assets/images/slider-3-720x470.jpg')"
+        'bg-video':"url('assets/images/slider-3-720x470.jpg')"
       }
     },
   },
