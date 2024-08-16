@@ -25,7 +25,7 @@ const Video = () => {
 		setOpenVideoModel(false);
 	};
 	return (
-		<section className='h-[80svh] w-full bg-cover bg-center bg-fixed flex items-center justify-center mt-5 bg-bg-video'>
+		<section className='h-[80svh] w-full bg-cover bg-center bg-fixed flex items-center justify-center brightness-75 mt-5 bg-bg-video'>
 			<div>
 				<PlayCircleIcon
 					width={120}
