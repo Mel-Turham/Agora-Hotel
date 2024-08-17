@@ -21,13 +21,32 @@ const Hero = () => {
 				align: 'center',
 				loop: true,
 			}}
-			className='relative '
+			className='relative w-screen h-[40rem] overflow-hidden'
 		>
 			<CarouselContent className='h-full'>
-				<CarouselItem className='relative pl-0'>
+				<CarouselItem className='h-full pl-0'>
 					<motion.img
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
+						transition={{
+							duration: 1.5,
+							easeInOut,
+							mass: 1,
+							delay: 0.5,
+							ease: 'linear',
+							type: 'spring',
+							stiffness: 40,
+						}}
+						src={Image}
+						alt='Image 1'
+						className='object-cover w-full h-full brightness-75'
+					/>
+					<Heading />
+				</CarouselItem>
+				<CarouselItem className='relative w-full pl-0'>
+					<motion.img
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{
 							duration: 1.5,
 							easeInOut,

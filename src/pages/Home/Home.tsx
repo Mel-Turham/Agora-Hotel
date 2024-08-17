@@ -162,7 +162,7 @@ const Home = () => {
 			{/* bg-gray-100/25 */}
 			<section className='relative flex items-center justify-center w-full bg-gray-100/25 '>
 				<Hero />
-				<div className='absolute top-[100%] left-[50%] w-[82%] translate-x-[-50%] translate-y-[-50%] bg-white  rounded-[4px] shadow-md text-[#858a99] z-10 flex items-center px-6 py-8 gap-6'>
+				<div className='absolute top-[100%] left-[50%] w-[82%] max-w-[90%] translate-x-[-50%] translate-y-[-50%] bg-white  rounded-[4px] shadow-md text-[#858a99] z-10 flex items-center px-6 py-8 gap-6'>
 					<div className='flex flex-col w-1/3 gap-2'>
 						<span className='font-semibold'>Check In/Out</span>
 						<DatePickerWithRange className='border border-solid border-[#858a99] rounded-sm py-1' />
@@ -264,14 +264,14 @@ const Home = () => {
 					</Tilt>
 				</div>
 			</section>
-			<section className='bg-[#F1F0ED]  flex flex-col items-center py-[4rem] px-28'>
+			<section className='bg-[#F1F0ED]  flex flex-col items-center py-[4rem] px-28 mx-auto'>
 				<Title
 					title='Our favorite rooms'
 					paragraph='Check out now our best rooms'
 					align='center'
 				/>
 
-				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%]  gap-4  mt-14'>
+				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%]  gap-4  mt-14 '>
 					{rooms.slice(0, 5).map((room) => {
 						const { image, id, price, roomDetails, name } = room;
 						return (

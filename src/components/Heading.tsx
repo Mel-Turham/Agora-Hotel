@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 const Heading = () => {
 	return (
-		<div className='absolute flex flex-col items-center justify-center gap-4 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full'>
+		<div className='absolute flex flex-col items-center justify-center gap-4 top-[35%] left-[50%] translate-x-[-50%]  w-full'>
 			<div className='overflow-hidden'>
 				<motion.h2
 					initial={{ y: '-90%', opacity: 0 }}
@@ -29,7 +29,7 @@ const Heading = () => {
 						className='w-full h-2 transform border-t-2 border-b-2 border-white border-solid'
 					></motion.div>
 				</div>
-				<div className='flex items-center justify-center overflow-hidden  w-[25%]'>
+				<div className='flex items-center justify-center overflow-hidden w-[25%]'>
 					<motion.p
 						initial={{ y: '80%', opacity: 0 }}
 						whileInView={{ y: '0%', opacity: 1 }}
