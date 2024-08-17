@@ -4,7 +4,7 @@ import { cartEventArray as datas } from '../../db/data';
 
 const Events = () => {
 	return (
-		<section className=' py-[5rem] px-14 '>
+		<section className=' py-[5rem] px-28'>
 			<div>
 				<Title
 					title='LATEST NEWS & EVENTS'

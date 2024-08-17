@@ -159,9 +159,10 @@ const Home = () => {
 
 	return (
 		<>
-			<section className='relative flex items-center justify-center w-full'>
+			{/* bg-gray-100/25 */}
+			<section className='relative flex items-center justify-center w-full bg-gray-100/25 '>
 				<Hero />
-				<div className='absolute top-[100%] left-[50%] w-[90%] translate-x-[-50%] translate-y-[-50%] bg-white  rounded-[4px] shadow-md text-[#858a99] z-10 flex items-center px-6 py-8 gap-6'>
+				<div className='absolute top-[100%] left-[50%] w-[82%] translate-x-[-50%] translate-y-[-50%] bg-white  rounded-[4px] shadow-md text-[#858a99] z-10 flex items-center px-6 py-8 gap-6'>
 					<div className='flex flex-col w-1/3 gap-2'>
 						<span className='font-semibold'>Check In/Out</span>
 						<DatePickerWithRange className='border border-solid border-[#858a99] rounded-sm py-1' />
@@ -172,9 +173,10 @@ const Home = () => {
 							className='border border-solid border-[#858a99] rounded-sm py-3 px-2 cursor-pointer'
 							onClick={handleFocus}
 						>
-							<label className='flex items-center gap-1 font-semibold'>
+							<label className='flex items-center gap-3 font-semibold'>
 								<div className='flex items-center'>
-									<PersonStanding className='w-5 h-5' /> Total of Guess:{' '}
+									<PersonStanding className='w-5 h-5' /> 
+									Guests
 								</div>
 								<input
 									readOnly
@@ -203,8 +205,8 @@ const Home = () => {
 					</Button>
 				</div>
 			</section>
-			<section className=' px-[15px] bg-gray-100/25 grid items-center py-20'>
-				<div className='flex items-center  justify-between w-[95%] mx-auto h-[500px]  px-3'>
+			<section className='grid items-center px-20 py-20 '>
+				<div className='flex items-center  justify-between gap-8 w-[95%] mx-auto h-[500px]'>
 					<div className='flex flex-col w-1/2 gap-[2rem]'>
 						<div className='flex flex-col gap-[10px]'>
 							<Title
@@ -213,7 +215,7 @@ const Home = () => {
 							/>
 						</div>
 
-						<p className='text-[15px] text-[#858a99] text-pretty leading-7 w-[500px]'>
+						<p className='text-[15px] text-[#858a99] text-pretty leading-7 w-fit'>
 							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
 							nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
 							erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
@@ -230,8 +232,9 @@ const Home = () => {
 							<ChevronRight className='w-5 h-5 mt-0.5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out' />
 						</Button>
 					</div>
+
 					<Tilt
-						className='w-1/2 h-[300px] relative '
+						className='w-[450px] h-[300px] relative '
 						options={{
 							scale: 1,
 							speed: 500,
@@ -261,15 +264,14 @@ const Home = () => {
 					</Tilt>
 				</div>
 			</section>
-
-			<section className='bg-[#F1F0ED]  px-[15px] flex flex-col items-center py-[4rem]'>
+			<section className='bg-[#F1F0ED]  flex flex-col items-center py-[4rem] px-28'>
 				<Title
 					title='Our favorite rooms'
 					paragraph='Check out now our best rooms'
 					align='center'
 				/>
 
-				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%]  gap-4 px-10 mt-10'>
+				<div className='room grid w-full grid-cols-4 grid-rows-2 h-[100%]  gap-4  mt-14'>
 					{rooms.slice(0, 5).map((room) => {
 						const { image, id, price, roomDetails, name } = room;
 						return (

@@ -6,7 +6,7 @@ import { TestimonialsArray as data } from '../../db/data';
 
 const Testimonials = () => {
 	return (
-		<section className='bg-[#F5F3F0]  px-16 py-[4rem] '>
+		<section className='bg-[#F5F3F0]  px-28 py-[4rem] '>
 			<div className='flex justify-between'>
 				<div>
 					<Title
@@ -18,7 +18,7 @@ const Testimonials = () => {
 					View all reviews <ChevronRight width={24} height={24} />
 				</Button>
 			</div>
-			<div className='mt-[4rem] flex  relative gap-8'>
+			<div className='mt-[4rem] grid grid-cols-3 relative gap-8'>
 				{data.map((data) => {
 					const {
 						UserImage,

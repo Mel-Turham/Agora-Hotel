@@ -4,7 +4,7 @@ import { DiscoverData } from '../../db/data';
 
 const Discover = () => {
 	return (
-		<section className=' px-[15px] flex flex-col items-center py-[4rem]'>
+		<section className=' px-20 flex flex-col items-center py-[4rem]'>
 			<Title
 				title='DISCOVER GREECE'
 				paragraph='Places you must explore this summer'
