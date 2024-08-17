@@ -15,23 +15,23 @@ import Container from './Container';
 const Footer = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	return (
-		<footer className='py-4 border-t border-gray-200 border-solid divide-y shadow-md max-w-[1248px] mx-auto'>
+		<footer className='py-4 mx-auto text-white bg-black border-t border-gray-200 border-solid divide-y shadow-md'>
 			<Container>
 				<div className='flex justify-between gap-3 py-8'>
 					<div className='flex flex-col w-1/4 gap-2'>
 						<Logo />
 
-						<p className='text-sm leading-7 text-gray-500 text-pretty'>
+						<p className='text-sm leading-7 text-white text-pretty'>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
 							vitae nobis molestiae, ducimus nostrum cum id minima a distinctio
 							natus?
 						</p>
 					</div>
 					<div className='space-y-6'>
-						<h2 className='text-lg font-medium text-gray-500 uppercase'>
+						<h2 className='text-lg font-medium text-white uppercase'>
 							Latest news
 						</h2>
-						<div className='space-y-5 text-gray-500'>
+						<div className='space-y-5 text-white'>
 							<p>Agora Hotel in pictures</p>
 							<p>10 things you should know</p>
 							<p>Hotel Zante Weddings</p>
@@ -40,10 +40,10 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className='space-y-6'>
-						<h2 className='text-lg font-medium text-gray-500 uppercase'>
+						<h2 className='text-lg font-medium text-white uppercase'>
 							Use full links
 						</h2>
-						<div className='space-y-5 text-gray-500'>
+						<div className='space-y-5 text-white'>
 							<p className='flex items-center'>
 								<ChevronRight /> <span>Loction</span>
 							</p>
@@ -62,10 +62,10 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className='space-y-6'>
-						<h2 className='text-lg font-medium text-gray-500 uppercase'>
+						<h2 className='text-lg font-medium text-white uppercase'>
 							Contact us
 						</h2>
-						<div className='space-y-5 text-gray-500'>
+						<div className='space-y-5 text-white'>
 							<p className='flex items-center gap-1'>
 								<MapPin className='w-5 h-5' /> <span>Douala cameroun</span>
 							</p>
@@ -88,7 +88,7 @@ const Footer = () => {
 			<Container>
 				<div className='relative flex items-center justify-between py-5'>
 					{/* copyright */}
-					<p className='text-gray-500'>
+					<p className='text-white'>
 						{' '}
 						&copy; 2024 Agora Hotel. Designed by{' '}
 						<span className='text-orange-400'>Mel Turham</span>{' '}

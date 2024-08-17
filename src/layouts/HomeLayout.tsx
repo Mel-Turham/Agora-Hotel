@@ -9,7 +9,7 @@ const HomeLayout = () => {
 	return (
 		<>
 			<Navbar />
-			<main className='max-w-screen-xl mx-auto'>
+			<main className='mx-auto '>
 				{pathname !== '/' && (
 					<Container className='bg-[#F5F3F0] py-16'>
 						<h1 className='text-2xl font-medium text-gray-600 capitalize'>

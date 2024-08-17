@@ -20,13 +20,13 @@ const CarouselService = () => {
 		return () => clearInterval(interval); // Clear interval on component unmount
 	}, [totalItems]);
 	return (
-		<section className='px-[15px] flex flex-col items-center py-[4rem]'>
+		<section className='px-20 flex flex-col items-center py-[4rem]'>
 			<Title
 				title='OUR AWESOME SERVICES'
 				paragraph='Check out our awesome services'
 				align='center'
 			/>
-			<div className='flex w-full px-10 mt-16 gap-7 '>
+			<div className='flex w-full mt-16 gap-7 '>
 				<figure className='relative flex w-2/3 h-full overflow-hidden rounded-sm'>
 					{data.map((item) => {
 						return (
@@ -53,7 +53,7 @@ const CarouselService = () => {
 						return (
 							<div
 								key={item.id}
-								className={`relative flex items-center gap-4 p-2 mb-5 ring-1 ring-gray-200 last:mb-0 transition-all duration-300 ease-in rounded-sm ${
+								className={`relative flex items-center gap-5 p-1 mb-5 ring-1 ring-gray-200 last:mb-0 transition-all duration-300 ease-in rounded-sm ${
 									i * 2 === index
 										? 'bg-[#333333] text-gray-100 shadow-lg'
 										: 'text-gray-500 bg-white'

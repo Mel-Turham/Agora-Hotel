@@ -27,7 +27,7 @@ const Branch = () => {
 
 	return (
 		<section>
-			<Container className='grid grid-cols-3 gap-16 py-10 '>
+			<Container className='grid grid-cols-3 gap-4 py-10'>
 				{branches.map((branch) => (
 					<BranchCard
 						key={branch.id}

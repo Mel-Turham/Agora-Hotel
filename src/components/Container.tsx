@@ -8,7 +8,7 @@ const Container = ({
 	className?: string;
 }) => {
 	return (
-		<section className={`${className} px-16`}>
+		<section className={`${className} px-28`}>
 			{children}
 		</section>
 	);

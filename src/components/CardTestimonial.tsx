@@ -20,7 +20,7 @@ const CardTestimonial = ({
 }: Props) => {
 	return (
 		<div className='flex flex-col items-center gap-5'>
-			<div className='relative flex flex-col items-center px-8 py-6 transition-all duration-500 ease-in-out bg-white rounded-sm shadow-sm ring ring-gray-50/5 hover:-translate-y-2 hover:shadow-lg'>
+			<div className='relative flex flex-col items-center px-8 py-6 transition-all duration-500 ease-in-out bg-white rounded-sm shadow-sm ring ring-gray-50/5 hover:-translate-y-2 hover:shadow-lg h-[250px]'>
 				<div className='flex flex-col gap-1 mb-1 item-center'>
 					<h3 className='text-[#858a99] text-[22px] capitalize font-medium text-center'>
 						{feedBack}
